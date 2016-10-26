@@ -6,23 +6,22 @@ Rock Paper Scissors
 </title>
 </head>
 <body>
-<center>
-<h1>
+ <link rel="stylesheet" type="text/css" href="css/format.css"><h1>
 Welcome to Rock Paper Scissors
 </h1>
 <h3 id="play" >
 Play
 </h3>
 
-<button  type="button" onClick="go('Rock')">
+<button  type="button" id='Rock' >
 <img src = images/rock.jpg height = 50 width = 50> </img>
 </button>
 <br>
-<button type="button" onClick="go('Paper')">
+<button type="button" id='Paper'>
 <img src = images/paper.png height = 50 width = 50> </img>
 </button>
 <br>
-<button type="button" onClick="go('Scissors')">
+<button type="button" id = 'Scissors'>
 <img src = images/scissors.png height = 50 width = 50> </img>
 </button>
 <br>
@@ -41,38 +40,9 @@ Ties:
 
 
 
-<script> 
-var go = function(type){
-var user = type
-var comp = Math.random();
-if (comp < 0.33){comp = 'Rock';
-}
-else if (comp < 0.66){comp = 'Scissors'}
-else {comp = 'Paper';}
-var text;
-if(comp == user)
-{text = "Tie";
-document.getElementById('ties').innerHTML = Number(document.getElementById('ties').innerHTML)+  1;
-
-}
-else if ((comp == 'Rock' && user == 'Paper') || (comp == 'Paper' && user == 'Scissors') || (comp == 'Scissors' && user == 'Rock'))
-{text = "You Win";
-document.getElementById('wins').innerHTML = Number(document.getElementById('wins').innerHTML)+  1;
-}
-else{
-text = "You lose";
-document.getElementById('loses').innerHTML =Number(document.getElementById('loses').innerHTML)+  1;
-}
-
-document.getElementById('play').innerHTML = "You played "+ user +". Computer played "+comp+". " + text;
-
-
-}
-
-
-
+<script src = js/js.js> 
 </script>
-</center>
+
 </body>
 
 
